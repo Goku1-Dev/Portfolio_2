@@ -3,7 +3,7 @@ import './index.scss'
 
 const Project = () => {
     return (
-        <div>index</div>
+        <div className='Project_container'>Project</div>
     )
 }
 

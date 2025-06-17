@@ -1,40 +1,53 @@
 .layout_container {
-    width: auto;
-    height: auto;
+    width: 100vw;
+    min-height: 100vh;
 
     .layout_wrapper {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        /* Animated gradient background */
+        background: var(--gradient);
+        background-size: 400% 400%;
+        animation: gradientFlow 15s ease infinite;
+        
+        transition: var(--theme-transition);
 
         .layout_header {
-            position: absolute;
-            top: 0;
-            left: calc(100% / 5);
-            width: calc(100% * 3 / 5);
+            width: var(--gutter);
             height: 10vh;
-            background-color: var(--background-primary);
             transition: var(--theme-transition);
+            flex-shrink: 0;
         }
         
         .layout_body {
-            position: absolute;
-            top: 10vh;
-            left: calc(100% / 5);
-            width: calc(100% * 3 / 5);
-            height: calc(100vh - 10vh - 30vh);
+            width: var(--gutter);
+            flex: 1;
+            min-height: 0;
             display: flex;
             flex-direction: column;
         }
         
         .layout_footer {
-            position: absolute;
-            bottom: 0;
-            left: calc(100% / 5);
-            width: calc(100% * 3 / 5);
+            width: var(--gutter);
             height: 30vh;
-            background-color: #000;
             transition: var(--theme-transition);
+            flex-shrink: 0;
         }
+    }
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }

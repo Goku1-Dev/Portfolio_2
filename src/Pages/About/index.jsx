@@ -3,7 +3,7 @@ import './index.scss'
 
 const About = () => {
     return (
-        <div>index</div>
+        <div className='About_container'>About</div>
     )
 }
 

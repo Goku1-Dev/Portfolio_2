@@ -3,7 +3,7 @@ import './index.scss'
 
 const Experience = () => {
     return (
-        <div>index</div>
+        <div className='Experiences_container'>Experiences</div>
     )
 }
 

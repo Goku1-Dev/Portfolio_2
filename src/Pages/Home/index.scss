@@ -1,0 +1,21 @@
+.Home_body_container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .Home_body_wrapper {
+        width: 100%;
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        .Body_Home,
+        .Body_Experience,
+        .Body_Projects,
+        .Body_Skill {
+            width: 100%;
+        }
+    }
+}

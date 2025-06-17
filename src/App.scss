@@ -10,28 +10,29 @@
 
 
 :root {
-    --background-primary: #DDE5EF;
-    --background-secondary: #dcdcdc;
-    --box-background: #1f2937;
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --box-text: #d1d5db;
+    --background-primary: #000116;
+    --background-secondary: #233038;
+
+    --text-primary: #fdfdfd;
+    --text-secondary: #d9d9d9;
+
+    --borderline-primary:#ff5532;
+    --borderline-secondary: #fca311;
+
+    --card-background: #0c211d;
+    
     --border-color: #979797;
     --menu-hover: #ffffff;
     --menu-active: #e5e7eb;
-    --dropdown-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    --logo-color: #111827;
 
-    --icon-box: #c4c4c4;
-    --icon-box-hover: #e0e0e0;
+    --icon: #c4c4c4;
 
-    --fav1-clr: #1c86ff;
-    --fav2-clr: #1f1f1f;
-    --fav3-clr: #f0f0f0;
-    --element_text: #dde5ef2f;
-
+    // Gradient
+    --gradient: linear-gradient(-45deg, #000116, #040E2F, #03051B, #040E2F);
     
     // Transition
     --theme-transition: background-color 1.3s ease, color 1.3s ease, border-color 1.3s ease;
     
+    // Gutter
+    --gutter: calc(100% * 8 / 10);
 }
