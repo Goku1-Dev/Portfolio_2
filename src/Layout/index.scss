@@ -1,0 +1,40 @@
+.layout_container {
+    width: auto;
+    height: auto;
+
+    .layout_wrapper {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+
+        .layout_header {
+            position: absolute;
+            top: 0;
+            left: calc(100% / 5);
+            width: calc(100% * 3 / 5);
+            height: 10vh;
+            background-color: var(--background-primary);
+            transition: var(--theme-transition);
+        }
+        
+        .layout_body {
+            position: absolute;
+            top: 10vh;
+            left: calc(100% / 5);
+            width: calc(100% * 3 / 5);
+            height: calc(100vh - 10vh - 30vh);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .layout_footer {
+            position: absolute;
+            bottom: 0;
+            left: calc(100% / 5);
+            width: calc(100% * 3 / 5);
+            height: 30vh;
+            background-color: #000;
+            transition: var(--theme-transition);
+        }
+    }
+}
