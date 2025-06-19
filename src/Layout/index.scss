@@ -2,19 +2,23 @@
     width: 100vw;
     min-height: 100vh;
 
+    /* Animated gradient background */
+        background: var(--gradient);
+        background-size: 400% 400%;
+        animation: gradientFlow 15s ease infinite;
+        
+        transition: var(--theme-transition);
+
     .layout_wrapper {
         width: 100%;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        /* Animated gradient background */
-        background: var(--gradient);
-        background-size: 400% 400%;
-        animation: gradientFlow 15s ease infinite;
-        
-        transition: var(--theme-transition);
+        background: rgba(180, 180, 180, 0.096);
+        backdrop-filter: blur(10px);
+        color: white;
+
 
         .layout_header {
             width: var(--gutter);

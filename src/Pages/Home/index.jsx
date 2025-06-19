@@ -1,9 +1,10 @@
 import React from 'react'
 import HomeDetails from './components/HomeDetails'
-import ExperienceDetails from './components/ExperienceDetails'
-import ProjectsDetails from './components/ProjectsDetails'
-import SkillDetails from './components/SkillDetails'
+// import ExperienceDetails from './components/ExperienceDetails'
+// import ProjectsDetails from './components/ProjectsDetails'
+// import SkillDetails from './components/SkillDetails'
 import './index.scss'
+import AboutCnt from '../../Components/AboutCnt'
 
 export const Home = () => {
     return (
@@ -12,7 +13,8 @@ export const Home = () => {
                 <div className='Body_Home'>
                     <HomeDetails />
                 </div>
-                <div className='Body_Experience'>
+                <div className='Body_About'><AboutCnt /></div>
+                {/* <div className='Body_Experience'>
                     <ExperienceDetails />
                 </div>
                 <div className='Body_Projects'>
@@ -20,7 +22,7 @@ export const Home = () => {
                 </div>
                 <div className='Body_Skill'>
                     <SkillDetails />
-                </div>
+                </div> */}
             </div>
         </div>
     )
