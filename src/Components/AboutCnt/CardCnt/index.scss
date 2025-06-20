@@ -1,0 +1,36 @@
+.CardCnt_container{
+    width: 100%;
+    height: 100%;
+
+    .CardCnt_wrapper{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        background-color: blue;
+        gap: 2rem;
+
+        .Card_container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            gap: 1rem;
+
+            .Card_icon{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                color: var(--text-primary);
+            }
+
+            .Card_text{
+                width: 100%;
+                height: 100%;
+                font-size: 1rem;
+                color: var(--text-primary);
+            }
+        }
+    }
+}

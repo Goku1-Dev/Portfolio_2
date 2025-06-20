@@ -11,12 +11,18 @@
         flex-direction: column;
         gap: 2rem;
         
-        .Body_Home,
-        .Body_About,
-        .Body_Experience,
-        .Body_Projects,
-        .Body_Skill {
+        .Body_Home{
             width: 100%;
+        }
+        .Body_About{
+            width: 100%;
+
+            .AboutCnt{
+                width: 100%;
+            }
+            .CardCnt{
+                width: 100%;
+            }
         }
     }
 }

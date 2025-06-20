@@ -5,6 +5,8 @@ import HomeDetails from './components/HomeDetails'
 // import SkillDetails from './components/SkillDetails'
 import './index.scss'
 import AboutCnt from '../../Components/AboutCnt'
+import CardCnt from '../../Components/AboutCnt/CardCnt'
+import LandscapeCards from '../../Components/CardComponent/LandscapeCards'
 
 export const Home = () => {
     return (
@@ -13,7 +15,11 @@ export const Home = () => {
                 <div className='Body_Home'>
                     <HomeDetails />
                 </div>
-                <div className='Body_About'><AboutCnt /></div>
+                <div className='Body_About'>
+                    <div className='AboutCnt'><AboutCnt /></div>
+                    <div className='CardCnt'><CardCnt /></div>
+                    {/* <div><LandscapeCards /></div> */}
+                </div>
                 {/* <div className='Body_Experience'>
                     <ExperienceDetails />
                 </div>
