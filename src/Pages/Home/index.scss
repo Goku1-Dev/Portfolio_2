@@ -22,6 +22,9 @@
             }
             .CardCnt{
                 width: 100%;
+                z-index: 1;
+                top: -1100px;
+                position: relative;
             }
         }
     }

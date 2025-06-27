@@ -18,7 +18,7 @@ export const Home = () => {
                 <div className='Body_About'>
                     <div className='AboutCnt'><AboutCnt /></div>
                     <div className='CardCnt'><CardCnt />    </div>
-                    <div><LandscapeCards /></div>
+                    {/* <div><LandscapeCards /></div> */}
                 </div>
                 {/* <div className='Body_Experience'>
                     <ExperienceDetails />

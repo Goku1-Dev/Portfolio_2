@@ -7,7 +7,7 @@
         height: 300px;
         display: flex;
         flex-direction: row;
-        background-color: blue;
+        background-color: var(--background-primary);
         gap: 2rem;
 
         .Card_container{
