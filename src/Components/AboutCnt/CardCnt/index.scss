@@ -7,7 +7,8 @@
         height: 300px;
         display: flex;
         flex-direction: row;
-        background-color: var(--background-primary);
+        background: var(--gradient);
+        border: 2px solid rgba(255, 255, 255, 0.738);
         gap: 2rem;
 
         .Card_container{
@@ -17,6 +18,18 @@
             flex-direction: column;
             padding: 30px;
             gap: 1rem;
+            position: relative;
+
+            // Add separator line after each card except the last one
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: -1rem; // Half of the gap (2rem / 2)
+                top: 10%;
+                bottom: 10%;
+                width: 1px;
+                background-color: rgba(255, 255, 255, 0.652);
+            }
 
             .Card_icon{
                 width: 100%;

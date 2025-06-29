@@ -1,6 +1,6 @@
 .Home_body_container {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 
@@ -23,7 +23,7 @@
             .CardCnt{
                 width: 100%;
                 z-index: 1;
-                top: -1100px;
+                top: -745px;
                 position: relative;
             }
         }
