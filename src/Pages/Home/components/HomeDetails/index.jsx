@@ -26,7 +26,7 @@ const HomeDetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className='HomeDetails_right'>
+                <div className='HomeDetails_right_container'>
                     <div className='HomeDetails_right_wrapper'>
                         <div className='HomeDetails_image'></div>
                     </div>

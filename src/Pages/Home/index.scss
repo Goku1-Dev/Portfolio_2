@@ -13,6 +13,20 @@
         
         .Body_Home{
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            .HomeDetails{
+                width: 100%;
+            }
+            .MediaCnt{
+                width: 6%;
+                z-index: 1;
+                top: 100px;
+                left: 11%;
+                position: relative;
+            }
         }
         .Body_About{
             width: 100%;
