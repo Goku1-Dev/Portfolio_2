@@ -1,0 +1,131 @@
+.LandscapeCards_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .card__container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .card__article{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            gap: 10px;
+
+            &:hover {
+                animation: remove-overflow 2s forwards;
+
+                .card__data {
+                animation: show-data 1s forwards;
+                opacity: 1;
+                transition: opacity 0.3s;
+                }
+            }
+
+            &:not(:hover) {
+                animation: show-overflow 2s forwards;
+
+                .card__data {
+                animation: remove-data 1s forwards;
+                }
+            }
+
+            .card__img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            }
+            .card__data{
+                width: 90%;
+                background-color: #f8f9fa;
+                padding: 0.5rem 1.5rem;
+                box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+                border-radius: 1rem;
+                position: absolute;
+                bottom: -9rem;
+                left: 0;
+                right: 0;
+                margin-inline: auto;
+                opacity: 0;
+                transition: opacity 1s 1s;
+
+                .card__description{
+                    display: block;
+                    font-size: 0.575rem;
+                    margin-bottom: 0.25rem;
+                }
+                .card__title{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: #212529;
+                    margin-bottom: 0.75rem;
+                }
+                .card__button{
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    color: #007bff;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Keyframe animations
+@keyframes show-data {
+50% {
+transform: translateY(-10rem);
+}
+100% {
+transform: translateY(-7rem);
+}
+}
+
+@keyframes remove-overflow {
+to {
+overflow: initial;
+}
+}
+
+@keyframes remove-data {
+0% {
+transform: translateY(-7rem);
+}
+50% {
+transform: translateY(-10rem);
+}
+100% {
+transform: translateY(0.5rem);
+}
+}
+
+@keyframes show-overflow {
+0% {
+overflow: initial;
+pointer-events: none;
+}
+50% {
+overflow: hidden;
+}
+}

@@ -4,9 +4,9 @@ import './index.scss'
 
 const CardCnt = () => {
     const CardBox = [
-        { text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', icon: <Download/>},
-        { text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', icon: <Download/> },
-        { text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.' ,icon: <Download/> }
+        { heading : 'Designing', text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', icon: <Download/>},
+        { heading : 'Development', text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', icon: <Download/> },
+        { heading : 'Deployment', text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.' ,icon: <Download/> }
     ];
     return (
         <div className='CardCnt_container'>
@@ -14,6 +14,7 @@ const CardCnt = () => {
                 {CardBox.map((card, index) => (
                     <div className='Card_container' key={index}>
                         <div className='Card_icon'>{card.icon}</div>
+                        <div className='Card_heading'>{card.heading}</div>
                         <div className='Card_text'>{card.text}</div>
                     </div>
                 ))}

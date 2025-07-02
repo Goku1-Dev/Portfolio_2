@@ -1,6 +1,7 @@
 import React from 'react'
 import { iconFile } from "../../utils";
 import './index.scss'
+import LandscapeCards from './LandscapeCards';
 
 const AboutCnt = () => {
     const skillsList = [
@@ -8,12 +9,6 @@ const AboutCnt = () => {
         { name: 'React.js', icon: iconFile.react },
         { name: 'Next.js', icon: iconFile.nextjs },
         { name: 'Node.js', icon: iconFile.nodejs }
-    ];
-
-    const ProjectList = [
-        { name: 'JavaScript', icon: iconFile.js },
-        { name: 'React.js', icon: iconFile.react },
-        { name: 'Next.js', icon: iconFile.nextjs }
     ];
 
     return (
@@ -31,6 +26,10 @@ const AboutCnt = () => {
                                     I’m a Designer & Software Engnier.
                                 </div>
                                 <div className='AboutCnt_content'>
+                                    Talk about your journey into full-stack development, 
+                                    what inspires you, and what excites you about building things with code. 
+                                    Talk about your journey into full-stack development, what inspires you, 
+                                    and what excites you about building things with code.
                                     Talk about your journey into full-stack development, 
                                     what inspires you, and what excites you about building things with code. 
                                     Talk about your journey into full-stack development, what inspires you, 
@@ -59,14 +58,14 @@ const AboutCnt = () => {
                                     what inspires you, and what excites you about building things with code. 
                                     Talk about your journey into full-stack development, what inspires you, 
                                     and what excites you about building things with code.
+                                    Talk about your journey into full-stack development, 
+                                    what inspires you, and what excites you about building things with code. 
+                                    Talk about your journey into full-stack development, what inspires you, 
+                                    and what excites you about building things with code.
                                 </div>
                             </div>
                             <div className='ExperienceCnt_Project_container'>
-                                {ProjectList.map((project, index) => (
-                                    <div className='ExperienceCnt_Project' key={index}>
-                                        <img src={project.icon} alt="icon" className="project_icon_img" />
-                                    </div>
-                                ))}
+                                <div className='ExperienceCnt_Project_wrapper'><LandscapeCards /></div>
                             </div>
                         </div>
                     </div>

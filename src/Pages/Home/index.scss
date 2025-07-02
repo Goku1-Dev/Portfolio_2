@@ -9,14 +9,14 @@
         flex: 1; 
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
         
         .Body_Home{
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: row;
-            gap: 2rem;
+
             .HomeDetails{
                 width: 100%;
             }
@@ -36,10 +36,14 @@
             }
             .CardCnt{
                 width: 100%;
+                height: 0;
                 z-index: 1;
                 top: -745px;
                 position: relative;
             }
+        }
+        .Body_Skills{
+            width: 100%;
         }
     }
 }
