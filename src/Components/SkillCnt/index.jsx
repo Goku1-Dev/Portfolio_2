@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect  } from 'react'
 import './index.scss';
 import { 
     NavigationHeading,
@@ -9,7 +9,7 @@ import {
     NavigationDesignItems } from './data'; 
 
 const SkillCnt = () => {
-        const [activeCategory, setActiveCategory] = useState(1);
+    const [activeCategory, setActiveCategory] = useState(1);
     const [selectedItem, setSelectedItem] = useState(null);
 
     // Function to get items based on category
@@ -30,9 +30,19 @@ const SkillCnt = () => {
         }
     };
 
-        const handleCategoryClick = (categoryId) => {
+    // Auto-select first item when component mounts or category changes
+    useEffect(() => {
+        const currentItems = getItemsByCategory(activeCategory);
+        if (currentItems.length > 0) {
+            // Find the item with id: 1, or fallback to first item
+            const firstItem = currentItems.find(item => item.id === 1) || currentItems[0];
+            setSelectedItem(firstItem);
+        }
+    }, [activeCategory]);
+
+    const handleCategoryClick = (categoryId) => {
         setActiveCategory(categoryId);
-        setSelectedItem(null); // Reset selected item when category changes
+        // selectedItem will be set by useEffect
     };
 
     const handleItemClick = (item) => {
@@ -44,6 +54,7 @@ const SkillCnt = () => {
     return (
         <div className='SkillCnt_container'>
             <div className='SkillCnt_wrapper'>
+                <div className='SkillCnt_header'>// Skills</div>
                 <div className='SkillCnt_heading'>
                     Talk about your journey into full-stack development what inspires you, 
                     and what excites you about building things with code.
@@ -71,8 +82,8 @@ const SkillCnt = () => {
                                         className={`sidebar_item ${selectedItem?.id === item.id ? 'selected' : ''}`}
                                         onClick={() => handleItemClick(item)}
                                     >
-                                        <span className='item_title'>{item.title}</span>
                                         <div className='item_icon'>{item.icons}</div>
+                                        {/* <span className='item_title'>{item.title}</span> */}
                                     </div>
                                 ))}
                             </div>
@@ -95,3 +106,28 @@ const SkillCnt = () => {
 }
 
 export default SkillCnt
+
+
+
+{/* <div className='Skills_dropdown'>
+    <div 
+        className={`Skills_dropdown_trigger ${isDropdownOpen ? 'open' : ''}`}
+        onClick={toggleDropdown}
+    >
+        <span>{selectedItem ? selectedItem.title : 'Select a skill'}</span>
+        <span className={`dropdown_arrow ${isDropdownOpen ? 'rotated' : ''}`}>▼</span>
+    </div>
+    {isDropdownOpen && (
+        <div className='Skills_dropdown_menu'>
+            {currentItems.map((item) => (
+                <div 
+                    className={`Skills_dropdown_item ${selectedItem && selectedItem.id === item.id ? 'active' : ''}`} 
+                    key={item.id}
+                    onClick={() => handleItemClick(item)}
+                >
+                    {item.title}
+                </div>
+            ))}
+        </div>
+    )}
+</div> */}

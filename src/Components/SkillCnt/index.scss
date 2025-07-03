@@ -11,6 +11,16 @@
         flex-direction: column;
         gap: 2rem;
 
+        .SkillCnt_header{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-secondary); 
+        }
+
         .SkillCnt_heading{
             width: 70%;
             height: 15%;
@@ -22,6 +32,7 @@
             font-weight: 550;
             color: var(--text-primary);
         }
+        
         .SkillCnt_skill_container{
             width: 70%;
             height: 100%;
@@ -41,11 +52,40 @@
                     justify-content: space-between;
                     align-items: center;
                     text-align: center;
+                    // background-color: rgba(176, 224, 230, 0.295);
 
                     .skill_container{
                         width: 100%;
                         height: 100%;
                         position: relative;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+
+                        // Active state styling
+                        &.active {
+                            background-color: rgba(176, 224, 230, 0.6);
+                            
+                            .skill_nav_item {
+                                color: var(--text-primary);
+                                font-weight: 600;
+                            }
+                            
+                            // Add active indicator
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 2px;
+                                background-color: var(--text-primary);
+                            }
+                        }
+
+                        // Hover effect for non-active items
+                        &:not(.active):hover {
+                            background-color: rgba(176, 224, 230, 0.4);
+                        }
 
                         .skill_nav_item{
                             width: 100%;
@@ -56,11 +96,11 @@
                             text-align: center;
                             font-size: 11px;
                             color: var(--text-primary);
+                            transition: all 0.3s ease;
                         }
                     }
-
-                    
                 }
+                
                 .SkillCnt_skill_body{
                     width: 100%;
                     height: 94%;
@@ -68,19 +108,128 @@
                     flex-direction: row;
 
                     .SkillCnt_skill_sidebar{
-                        width: 20%;
+                        width: 10%;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
+                        background-color: rgba(176, 224, 230, 0.295);
+
+                        .sidebar_item{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            position: relative;
+
+                            // Selected state styling
+                            &.selected {
+                                background-color: rgba(176, 224, 230, 0.6);
+                                
+                                .item_icon {
+                                    color: var(--text-primary);
+                                    font-weight: 600;
+                                    transform: scale(1.1);
+                                }
+                                
+                                // Add selected indicator
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    bottom: 0;
+                                    width: 3px;
+                                    background-color: var(--text-primary);
+                                }
+                            }
+
+                            // Hover effect for non-selected items
+                            &:not(.selected):hover {
+                                background-color: rgba(176, 224, 230, 0.4);
+                                
+                                .item_icon {
+                                    transform: scale(1.05);
+                                }
+                            }
+
+                            .item_title{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                font-size: 11px;
+                                color: var(--text-primary);
+                                transition: all 0.3s ease;
+                            }
+                            
+                            .item_icon{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                font-size: 11px;
+                                color: var(--text-primary);
+                                transition: all 0.3s ease;
+                            }
+                        }
                     }
+                    
                     .SkillCnt_skill_content{
                         width: 80%;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
+                        padding: 2rem;
+                        overflow-y: auto;
+
+                        .content_container{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            animation: fadeIn 0.5s ease-in-out;
+
+                            .content_wrapper{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem;
+
+                                .content_heading{
+                                    font-size: 24px;
+                                    font-weight: 600;
+                                    color: var(--text-primary);
+                                    margin-bottom: 1rem;
+                                }
+
+                                .content_description{
+                                    font-size: 16px;
+                                    line-height: 1.6;
+                                    color: var(--text-secondary);
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+// Fade in animation for content
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -5,6 +5,7 @@ import CardCnt from '../../Components/AboutCnt/CardCnt'
 import MediaCnt from '../../Components/MediaCnt'
 import './index.scss'
 import SkillCnt from '../../Components/SkillCnt'
+import Skills from '../../Components/Skills'
 
 export const Home = () => {
     return (
@@ -19,7 +20,8 @@ export const Home = () => {
                     <div className='CardCnt'><CardCnt /></div>
                 </div>
                 <div className='Body_Skills'>
-                    <SkillCnt />
+                    {/* <SkillCnt /> */}
+                    <Skills />
                 </div>
             </div>
         </div>
