@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import './index.scss';
 import { 
     NavigationHeading,
@@ -10,38 +10,51 @@ import {
 } from './data'; 
 import Dropdown from './Dropdown';
 
-const Skills = () => {
-        const [activeCategory, setActiveCategory] = useState(1);
-        const [selectedSkill, setSelectedSkill] = useState(null);
-        
-        const categoryDataMap = {
-            1: NavigationWebItems,
-            2: NavigationProgrammingItems,
-            3: NavigationDatabaseItems,
-            4: NavigationVersionItems,
-            5: NavigationDesignItems
-        };
-        const handleCategoryClick = (categoryId) => {
-            setActiveCategory(categoryId);
-            setSelectedSkill(null);
-        };
+const SkillsCnt = () => {
+    const [activeCategory, setActiveCategory] = useState(1);
+    const [selectedSkillId, setSelectedSkillId] = useState(null);
 
-        const handleSkillSelect = (skillId) => {
-            const currentCategoryData = categoryDataMap[activeCategory];
-            const skill = currentCategoryData.find(item => item.id === skillId);
-            setSelectedSkill(skill);
-        };
-        
-        // Get current category data for dropdown
-        const getCurrentCategoryData = () => {
-            return categoryDataMap[activeCategory] || [];
-        };
-        
-        // Get current category title
-        const getCurrentCategoryTitle = () => {
-            const category = NavigationHeading.find(cat => cat.id === activeCategory);
-            return category ? category.title : '';
-        };
+    const categoryDataMap = {
+        1: NavigationWebItems,
+        2: NavigationProgrammingItems,
+        3: NavigationDatabaseItems,
+        4: NavigationVersionItems,
+        5: NavigationDesignItems
+    };
+
+    // Get the first item ID of the current category
+    const getFirstItemId = useCallback(() => {
+        const currentItems = categoryDataMap[activeCategory];
+        return currentItems && currentItems.length > 0 ? currentItems[0].id : null;
+    }, [activeCategory]);
+
+    // Set the first item as selected when category changes
+    useEffect(() => {
+        setSelectedSkillId(getFirstItemId());
+    }, [activeCategory, getFirstItemId]);
+
+    const handleCategoryClick = (categoryId) => {
+        setActiveCategory(categoryId);
+    };
+
+    const handleSkillSelect = useCallback((skillId) => {
+        setSelectedSkillId(skillId);
+    }, []);
+
+    // Get current category data for dropdown
+    const getCurrentCategoryData = () => {
+        return categoryDataMap[activeCategory] || [];
+    };
+
+    // Get current category title
+    // const getCurrentCategoryTitle = () => {
+    //     const category = NavigationHeading.find(cat => cat.id === activeCategory);
+    //     return category ? category.title : '';
+    // };
+
+    // Get the currently selected skill
+    const selectedSkill = getCurrentCategoryData().find(item => item.id === selectedSkillId);
+    console.log(selectedSkill)
 
     return (
         <div className='Skills_container'>
@@ -52,7 +65,7 @@ const Skills = () => {
                             <div className='Skills_header_heading'>// Skills</div>
                             <div className='Skills_header_content'>
                                 Talk about your journey into full-stack development what inspires you, 
-                            and what excites you about building things with code.
+                                and what excites you about building things with code.
                             </div>
                         </div>
                         <div className='Skills_body'>
@@ -72,26 +85,47 @@ const Skills = () => {
                             <div className='Skills_body_right'>
                                 <div className='Skills_body_right_container'>
                                     <div className='Skills_body_right_wrapper'>
-                                        <h3 className='Skills_body_right_heading'>Select a skill</h3>
-                                        <Dropdown className='Skills_body_right_dropdown'
+                                        <h2 className='Skills_body_right_heading'>{selectedSkill?.title}</h2>
+                                        <Dropdown 
+                                            className='Skills_body_right_dropdown'
                                             options={getCurrentCategoryData().map(item => ({
-                                                    value: item.id,
-                                                    label: item.title
-                                                }))}
-                                                onSelect={handleSkillSelect}
-                                                placeholder={`${getCurrentCategoryTitle()}`}
+                                                value: item.id,
+                                                label: item.title,
+                                                icons: item.icons
+                                            }))}
+                                            onSelect={handleSkillSelect}
+                                            value={selectedSkillId}
                                         />
                                     </div>
                                     <div className='Skills_body_right_content'>
                                         {selectedSkill ? (
                                             <div className="skill_detail">
-                                                <div className="skill_detail_icon">
-                                                    {selectedSkill.icons}
-                                                </div>
                                                 <div className="skill_detail_info">
-                                                    <h3>{selectedSkill.title}</h3>
-                                                    <p>Category: {getCurrentCategoryTitle()}</p>
-                                                    {/* Add more skill details here as needed */}
+                                                    <div className='skill_detail_info_subheading'>
+                                                        <h2>Proficient – Used extensively in 5+ real-time projects</h2>
+                                                    </div>
+                                                    <div className="skill_detail_info_description">
+                                                        <h3 className="skill_detail_info_description_heading">Description</h3>
+                                                        <p className="skill_detail_info_description_para">
+                                                            Developed interactive and responsive user interfaces using React.js,
+                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
+                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
+                                                            Developed interactive and responsive user interfaces using React.js,
+                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
+                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
+                                                        </p>
+                                                    </div>
+                                                    <div className="skill_detail_info_keyDescription">
+                                                        <h3 className="skill_detail_info_keyDescription_heading">Key Projects using {selectedSkill.title}</h3>
+                                                        <p className="skill_detail_info_keyDescription_para">
+                                                            Developed interactive and responsive user interfaces using React.js,
+                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
+                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
+                                                            Developed interactive and responsive user interfaces using React.js,
+                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
+                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ) : (
@@ -110,4 +144,4 @@ const Skills = () => {
     )
 }
 
-export default Skills
+export default SkillsCnt;

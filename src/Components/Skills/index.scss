@@ -19,7 +19,7 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 1rem;
 
                 .Skills_header{
                     width: 100%;
@@ -54,13 +54,14 @@
                     height: 85%;
                     display: flex;
                     flex-direction: row;
+                    gap: 2rem;
 
                     .Skills_body_left{
                         width: 30%;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
-                        background-color: rgba(176, 224, 230, 0.295);
+                        background-color: rgba(176, 224, 230, 0.082);
 
                         .Skills_body_left_container{
                             width: 100%;
@@ -72,7 +73,7 @@
                             transition: all 0.3s ease;
                             position: relative;
 
-                            &.selected {
+                            &.active {
                                 background-color: rgba(176, 224, 230, 0.6);
                                 
                                 .skill_body_nav_item {
@@ -94,12 +95,23 @@
                             }
 
                             // Hover effect for non-selected items
-                            &:not(.selected):hover {
+                            &:not(.active):hover {
                                 background-color: rgba(176, 224, 230, 0.4);
                                 
                                 .skill_body_nav_item {
                                     transform: scale(1.05);
                                 }
+                            }
+
+                            .skill_body_nav_item{
+                                width: 30%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                font-size: 1rem;
+                                color: var(--text-primary);
                             }
                         }
                     }
@@ -130,7 +142,7 @@
                                     display: flex;
                                     align-items: center;
                                     text-align: center;
-                                    font-size: 1rem;
+                                    font-size: 2rem;
                                     color: var(--text-primary);
                                 }
                             }
@@ -140,6 +152,79 @@
                                 height: 90%;
                                 display: flex;
                                 flex-direction: column;
+                                padding: 10px 20px;
+
+                                .skill_detail{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 1rem;
+
+                                    .skill_detail_info{
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 1rem;
+
+                                        .skill_detail_info_subheading{
+                                            width: 100%;
+                                            height: 15%;
+                                            display: flex;
+                                            font-size: 1.2rem;
+                                            color: var(--text-primary);
+                                        }
+
+                                        .skill_detail_info_description{
+                                            width: 100%;
+                                            height: 42.5%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 0.1rem;
+
+                                            .skill_detail_info_description_heading{
+                                                width: 100%;
+                                                height: 15%;
+                                                display: flex;
+                                                font-size: 1.2rem;
+                                                color: var(--text-primary);
+                                            }
+                                            .skill_detail_info_description_para{
+                                                width: 100%;
+                                                height: 80%;
+                                                display: flex;
+                                                font-size: 1rem;
+                                                color: var(--text-primary);
+                                                padding: 0px 10px;
+                                            }
+                                        }
+
+                                        .skill_detail_info_keyDescription{
+                                            width: 100%;
+                                            height: 42.5%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 0.1rem;
+
+                                            .skill_detail_info_keyDescription_heading{
+                                                width: 100%;
+                                                height: 20%;
+                                                display: flex;
+                                                font-size: 1.2rem;
+                                                color: var(--text-primary);
+                                            }
+                                            .skill_detail_info_keyDescription_para{
+                                                width: 100%;
+                                                height: 80%;
+                                                display: flex;
+                                                font-size: 1rem;
+                                                color: var(--text-primary);
+                                                padding: 0px 10px;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

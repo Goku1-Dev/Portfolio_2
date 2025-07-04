@@ -4,8 +4,9 @@ import AboutCnt from '../../Components/AboutCnt'
 import CardCnt from '../../Components/AboutCnt/CardCnt'
 import MediaCnt from '../../Components/MediaCnt'
 import './index.scss'
-import SkillCnt from '../../Components/SkillCnt'
-import Skills from '../../Components/Skills'
+import SkillsCnt from '../../Components/Skills'
+import SkillShowcase from '../../Components/SkillShowcase'
+import ProjectCnt from '../../Components/projectCnt'
 
 export const Home = () => {
     return (
@@ -19,9 +20,14 @@ export const Home = () => {
                     <div className='AboutCnt'><AboutCnt /></div>
                     <div className='CardCnt'><CardCnt /></div>
                 </div>
+                <div className='Body_Projects'>
+                    <ProjectCnt />
+                </div>
                 <div className='Body_Skills'>
-                    {/* <SkillCnt /> */}
-                    <Skills />
+                    <SkillsCnt />
+                </div>
+                <div className='Body_SkillShowcase'>
+                    <SkillShowcase />
                 </div>
             </div>
         </div>
