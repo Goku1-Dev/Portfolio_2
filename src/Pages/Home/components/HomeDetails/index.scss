@@ -202,3 +202,149 @@
         }
     }
 }
+
+/* Tablets (width up to 1024px) */
+@media screen and (max-width: 1024px) {
+    .HomeDetails_container {
+        height: auto;
+
+        .HomeDetails_wrapper {
+            flex-direction: column;
+            gap: 3rem;
+            padding: 2rem;
+
+            .HomeDetails_left_container,
+            .HomeDetails_right_container {
+                width: 100%;
+            }
+
+            .HomeDetails_left_container {
+                .HomeDetails_left_wrapper {
+                    width: 100%;
+
+                    .HomeDetails_header {
+                        font-size: 1rem;
+                    }
+
+                    .HomeDetails_heading {
+                        font-size: 3rem;
+                    }
+
+                    .HomeDetails_content {
+                        font-size: 0.95rem;
+                    }
+
+                    .HomeDetails_button_container {
+                        flex-direction: row;
+                        gap: 1rem;
+
+                        .HomeDetails_Email_button {
+                            width: 200px;
+                            height: 40px;
+                        }
+
+                        .HomeDetails_Email_button_text {
+                            font-size: 13px;
+                        }
+                    }
+
+                    .HomeDetails_scroll_container {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .HomeDetails_right_container {
+                .HomeDetails_right_wrapper {
+                    .HomeDetails_image {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobiles (width up to 768px) */
+@media screen and (max-width: 768px) {
+    .HomeDetails_container {
+        height: auto;
+
+        .HomeDetails_wrapper {
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.5rem;
+
+            .HomeDetails_left_container,
+            .HomeDetails_right_container {
+                width: 100%;
+            }
+
+            .HomeDetails_left_container {
+                .HomeDetails_left_wrapper {
+                    width: 100%;
+                    gap: 0.8rem;
+
+                    .HomeDetails_header {
+                        font-size: 0.95rem;
+                    }
+
+                    .HomeDetails_heading {
+                        font-size: 2.2rem;
+                    }
+
+                    .HomeDetails_content {
+                        font-size: 0.9rem;
+                    }
+
+                    .HomeDetails_button_container {
+                        flex-direction: column;
+                        gap: 0.8rem;
+
+                        .HomeDetails_Email_button {
+                            width: 100%;
+                            height: 40px;
+                        }
+
+                        .HomeDetails_Email_button_text {
+                            font-size: 12px;
+                        }
+
+                        .HomeDetails_Download_button {
+                            width: 30px;
+                            height: 30px;
+
+                            .icon {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+
+                    .HomeDetails_scroll_container {
+                        width: 100%;
+                        .HomeDetails_scroll_mouse {
+                            width: 24px;
+                            height: 38px;
+
+                            &::before {
+                                width: 6px;
+                                height: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .HomeDetails_right_container {
+                .HomeDetails_right_wrapper {
+                    .HomeDetails_image {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

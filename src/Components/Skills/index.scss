@@ -273,3 +273,167 @@
         opacity: 1;
     }
 }
+
+
+/* Tablets (width up to 1024px) */
+@media screen and (max-width: 1024px) {
+    .Skills_container {
+        height: auto;
+
+        .Skills_wrapper {
+            .Skills_layout_container {
+                width: 85%;
+
+                .Skills_layout_wrapper {
+                    .Skills_header {
+                        .Skills_header_heading {
+                            font-size: 1.1rem;
+                        }
+                        .Skills_header_content {
+                            width: 80%;
+                            font-size: 0.95rem;
+                        }
+                    }
+
+                    .Skills_body {
+                        flex-direction: column;
+                        gap: 2rem;
+
+                        .Skills_body_left {
+                            width: 100%;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            transform: translateX(0) !important;
+                            opacity: 1 !important;
+
+                            .Skills_body_left_container {
+                                width: 45%;
+                                height: auto;
+
+                                .skill_body_nav_item {
+                                    width: 100%;
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+
+                        .Skills_body_right {
+                            width: 100%;
+                            transform: translateX(0) !important;
+                            opacity: 1 !important;
+
+                            .Skills_body_right_container {
+                                .Skills_body_right_wrapper {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+
+                                    .Skills_body_right_heading {
+                                        font-size: 1.5rem;
+                                    }
+                                }
+
+                                .Skills_body_right_content {
+                                    padding: 10px;
+
+                                    .skill_detail_info_subheading,
+                                    .skill_detail_info_description_heading,
+                                    .skill_detail_info_keyDescription_heading {
+                                        font-size: 1.1rem;
+                                    }
+
+                                    .skill_detail_info_description_para,
+                                    .skill_detail_info_keyDescription_para {
+                                        font-size: 0.95rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobiles (width up to 768px) */
+@media screen and (max-width: 768px) {
+    .Skills_container {
+        height: auto;
+
+        .Skills_wrapper {
+            .Skills_layout_container {
+                width: 95%;
+
+                .Skills_layout_wrapper {
+                    .Skills_header {
+                        .Skills_header_heading {
+                            font-size: 1rem;
+                        }
+                        .Skills_header_content {
+                            width: 100%;
+                            font-size: 0.85rem;
+                            padding: 0 10px;
+                        }
+                    }
+
+                    .Skills_body {
+                        flex-direction: column;
+                        gap: 1.5rem;
+
+                        .Skills_body_left {
+                            width: 100%;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            transform: translateX(0) !important;
+                            opacity: 1 !important;
+
+                            .Skills_body_left_container {
+                                width: 100%;
+                                height: auto;
+
+                                .skill_body_nav_item {
+                                    width: 100%;
+                                    font-size: 0.95rem;
+                                }
+                            }
+                        }
+
+                        .Skills_body_right {
+                            width: 100%;
+                            transform: translateX(0) !important;
+                            opacity: 1 !important;
+
+                            .Skills_body_right_container {
+                                .Skills_body_right_wrapper {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+
+                                    .Skills_body_right_heading {
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .Skills_body_right_content {
+                                    padding: 10px;
+
+                                    .skill_detail_info_subheading,
+                                    .skill_detail_info_description_heading,
+                                    .skill_detail_info_keyDescription_heading {
+                                        font-size: 1rem;
+                                    }
+
+                                    .skill_detail_info_description_para,
+                                    .skill_detail_info_keyDescription_para {
+                                        font-size: 0.9rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
