@@ -19,6 +19,7 @@
         backdrop-filter: blur(10px);
         color: white;
         padding: 10px 0;
+        gap: 1rem;
 
 
         .layout_header {
@@ -39,7 +40,7 @@
         
         .layout_footer {
             width: var(--gutter);
-            height: 30vh;
+            height: 75vh;
             transition: var(--theme-transition);
             flex-shrink: 0;
         }

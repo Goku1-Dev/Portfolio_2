@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react';
+import { useInView } from 'react-intersection-observer';
 import './index.scss';
 import { 
     NavigationHeading,
@@ -13,6 +14,16 @@ import Dropdown from './Dropdown';
 const SkillsCnt = () => {
     const [activeCategory, setActiveCategory] = useState(1);
     const [selectedSkillId, setSelectedSkillId] = useState(null);
+    
+    const [leftRef, leftInView] = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+    
+    const [rightRef, rightInView] = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
 
     const categoryDataMap = {
         1: NavigationWebItems,
@@ -69,7 +80,7 @@ const SkillsCnt = () => {
                             </div>
                         </div>
                         <div className='Skills_body'>
-                            <div className='Skills_body_left'>
+                            <div className={`Skills_body_left ${leftInView ? 'visible' : ''}`} ref={leftRef} >
                                 {NavigationHeading.map((skill) => (
                                     <div 
                                         className={`Skills_body_left_container ${activeCategory === skill.id ? 'active' : ''}`} 
@@ -82,7 +93,7 @@ const SkillsCnt = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className='Skills_body_right'>
+                            <div className={`Skills_body_right ${rightInView ? 'visible' : ''}`} ref={rightRef} >
                                 <div className='Skills_body_right_container'>
                                     <div className='Skills_body_right_wrapper'>
                                         <h2 className='Skills_body_right_heading'>{selectedSkill?.title}</h2>
