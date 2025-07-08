@@ -14,7 +14,7 @@
         
         .Body_Home{
             width: 100%;
-            height: 100%;
+            height: 60vh;
             display: flex;
             flex-direction: row;
 
@@ -23,6 +23,7 @@
             }
             .MediaCnt{
                 width: 6%;
+                height: 260px;
                 z-index: 1;
                 top: 100px;
                 left: 16%;
@@ -31,15 +32,18 @@
         }
         .Body_About{
             width: 100%;
+            height: 157vh;
+
 
             .AboutCnt{
                 width: 100%;
+                height: 150vh;
             }
             .CardCnt{
                 width: 100%;
                 height: 0;
                 z-index: 1;
-                top: -745px;
+                top: -725px;
                 position: relative;
             }
         }
