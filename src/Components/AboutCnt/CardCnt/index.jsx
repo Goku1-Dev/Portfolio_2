@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download } from 'lucide-react';
+import { Circle, Triangle, Square } from 'lucide-react';
 import { motion as Motion } from 'framer-motion';
 import './index.scss';
 
@@ -8,17 +8,17 @@ const CardCnt = () => {
         { 
             heading: 'Designing', 
             text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', 
-            icon: <Download/>
+            icon: <Circle style={{color: '#ff5532'}} fill='#ff5532' width={30} height={30}/>
         },
         { 
             heading: 'Development', 
             text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', 
-            icon: <Download/> 
+            icon: <Triangle style={{color: 'SkyBlue'}} fill='SkyBlue' width={30} height={30}/>  
         },
         { 
             heading: 'Deployment', 
             text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', 
-            icon: <Download/> 
+            icon: <Square style={{color: 'green'}} fill='green' width={30} height={30}/> 
         }
     ];
 
