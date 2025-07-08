@@ -6,6 +6,7 @@
 
     .Home_body_wrapper {
         width: 100%;
+        height: 100%;
         flex: 1; 
         display: flex;
         flex-direction: column;
@@ -24,7 +25,7 @@
                 width: 6%;
                 z-index: 1;
                 top: 100px;
-                left: 11%;
+                left: 16%;
                 position: relative;
             }
         }
@@ -50,6 +51,16 @@
         }
         .Body_SkillShowcase{
             width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Home_body_container {
+        .Home_body_wrapper {
+            .Body_Home{
+                flex-direction: column;
+            }
         }
     }
 }
