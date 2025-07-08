@@ -13,12 +13,12 @@ const CardCnt = () => {
         { 
             heading: 'Development', 
             text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', 
-            icon: <Triangle style={{color: 'SkyBlue'}} fill='SkyBlue' width={30} height={30}/>  
+            icon: <Triangle style={{color: '#00C3FF'}} fill='#00C3FF' width={30} height={30}/>  
         },
         { 
             heading: 'Deployment', 
             text: 'Talk about your journey into full-stack development what inspires you, and what excites you about building things with code.', 
-            icon: <Square style={{color: 'green'}} fill='green' width={30} height={30}/> 
+            icon: <Square style={{color: '#00FF11'}} fill='#00FF11' width={30} height={30}/> 
         }
     ];
 
