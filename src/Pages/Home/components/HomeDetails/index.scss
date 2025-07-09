@@ -165,13 +165,13 @@
                         position: relative;
                         &::before {
                             content: '';
-                            width: 8px;
-                            height: 8px;
+                            width: 7px;
+                            height: 7px;
                             position: absolute;
                             top: 10px;
                             left: 50%;
                             transform: translateX(-50%);
-                            background-color: var(--borderline-primary);
+                            background-color: var(--text-primary);
                             border-radius: 50%;
                             opacity: 1;
                             animation: wheel 2s infinite;
@@ -200,7 +200,6 @@
             flex: 1;
             width: 50%;
             height: 100%;
-            background-color: rgb(57, 98, 31);
 
             .HomeDetails_right_wrapper{
                 width: 100%;
