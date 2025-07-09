@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './index.scss';
 import { 
@@ -9,18 +9,11 @@ import {
     NavigationVersionItems,
     NavigationDesignItems
 } from './data'; 
-import Dropdown from './Dropdown';
 
 const SkillsCnt = () => {
     const [activeCategory, setActiveCategory] = useState(1);
-    const [selectedSkillId, setSelectedSkillId] = useState(null);
     
-    const [leftRef, leftInView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-    
-    const [rightRef, rightInView] = useInView({
+    const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
     });
@@ -33,126 +26,55 @@ const SkillsCnt = () => {
         5: NavigationDesignItems
     };
 
-    // Get the first item ID of the current category
-    const getFirstItemId = useCallback(() => {
-        const currentItems = categoryDataMap[activeCategory];
-        return currentItems && currentItems.length > 0 ? currentItems[0].id : null;
-    }, [activeCategory]);
-
-    // Set the first item as selected when category changes
-    useEffect(() => {
-        setSelectedSkillId(getFirstItemId());
-    }, [activeCategory, getFirstItemId]);
-
     const handleCategoryClick = (categoryId) => {
         setActiveCategory(categoryId);
     };
 
-    const handleSkillSelect = useCallback((skillId) => {
-        setSelectedSkillId(skillId);
-    }, []);
-
-    // Get current category data for dropdown
     const getCurrentCategoryData = () => {
         return categoryDataMap[activeCategory] || [];
     };
 
-    // Get current category title
-    // const getCurrentCategoryTitle = () => {
-    //     const category = NavigationHeading.find(cat => cat.id === activeCategory);
-    //     return category ? category.title : '';
-    // };
-
-    // Get the currently selected skill
-    const selectedSkill = getCurrentCategoryData().find(item => item.id === selectedSkillId);
-    console.log(selectedSkill)
-
     return (
-        <div className='Skills_container'>
-            <div className='Skills_wrapper'>
-                <div className='Skills_layout_container'>
-                    <div className='Skills_layout_wrapper'>
-                        <div className='Skills_header'>
-                            <div className='Skills_header_heading'>// Skills</div>
-                            <div className='Skills_header_content'>
-                                Talk about your journey into full-stack development what inspires you, 
-                                and what excites you about building things with code.
-                            </div>
+        <div className="skills-container" ref={ref}>
+            <div className="skills-wrapper">
+                <div className={`skills-layout ${inView ? 'visible' : ''}`}>
+                    <div className="skills-header">
+                        <h1 className="skills-title">// Skills</h1>
+                        <div className="skills-intro">
+                            <p className="skills-greeting">
+                                Hello world! My name is Gokul Sureshkumar, I'm a Designer & Software Engineer.
+                            </p>
                         </div>
-                        <div className='Skills_body'>
-                            <div className={`Skills_body_left ${leftInView ? 'visible' : ''}`} ref={leftRef} >
-                                {NavigationHeading.map((skill) => (
-                                    <div 
-                                        className={`Skills_body_left_container ${activeCategory === skill.id ? 'active' : ''}`} 
-                                        key={skill.id}
-                                        onClick={() => handleCategoryClick(skill.id)}
-                                    >
-                                        <div className='skill_body_nav_item'>
-                                            {skill.title}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className={`Skills_body_right ${rightInView ? 'visible' : ''}`} ref={rightRef} >
-                                <div className='Skills_body_right_container'>
-                                    <div className='Skills_body_right_wrapper'>
-                                        <h2 className='Skills_body_right_heading'>{selectedSkill?.title}</h2>
-                                        <Dropdown 
-                                            className='Skills_body_right_dropdown'
-                                            options={getCurrentCategoryData().map(item => ({
-                                                value: item.id,
-                                                label: item.title,
-                                                icons: item.icons
-                                            }))}
-                                            onSelect={handleSkillSelect}
-                                            value={selectedSkillId}
-                                        />
-                                    </div>
-                                    <div className='Skills_body_right_content'>
-                                        {selectedSkill ? (
-                                            <div className="skill_detail">
-                                                <div className="skill_detail_info">
-                                                    <div className='skill_detail_info_subheading'>
-                                                        <h2>Proficient – Used extensively in 5+ real-time projects</h2>
-                                                    </div>
-                                                    <div className="skill_detail_info_description">
-                                                        <h3 className="skill_detail_info_description_heading">Description</h3>
-                                                        <p className="skill_detail_info_description_para">
-                                                            Developed interactive and responsive user interfaces using React.js,
-                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
-                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
-                                                            Developed interactive and responsive user interfaces using React.js,
-                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
-                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
-                                                        </p>
-                                                    </div>
-                                                    <div className="skill_detail_info_keyDescription">
-                                                        <h3 className="skill_detail_info_keyDescription_heading">Key Projects using {selectedSkill.title}</h3>
-                                                        <p className="skill_detail_info_keyDescription_para">
-                                                            Developed interactive and responsive user interfaces using React.js,
-                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
-                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
-                                                            Developed interactive and responsive user interfaces using React.js,
-                                                            implementing advanced concepts like hooks, context API, and performance optimization techniques. 
-                                                            Built scalable applications integrating REST APIs and ensured reusable component design for faster development.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ) : (
-                                            <div className="skill_placeholder">
-                                                <p>Select a skill from the dropdown to see details</p>
-                                            </div>
-                                        )}
+                    </div>
+                    
+                    <div className="skills-categories">
+                        {NavigationHeading.map((skill) => (
+                            <button
+                                key={skill.id}
+                                className={`category-btn ${activeCategory === skill.id ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick(skill.id)}
+                            >
+                                {skill.title}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="skills-body">
+                        <div className="skills-grid">
+                            {getCurrentCategoryData().map((item) => (
+                                <div key={item.id} className="skill-card">
+                                    <img className='skill-icon-img' src={item.icons} alt={item.title} />
+                                    <div className="skill-info">
+                                        <h3 className="skill-name">{item.title}</h3>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default SkillsCnt;

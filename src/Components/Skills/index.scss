@@ -1,247 +1,138 @@
-.Skills_container{
+
+    :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-color: #4a9eff;
+    --border-color: #444;
+    --hover-bg: rgba(74, 158, 255, 0.1);
+    --active-bg: rgba(74, 158, 255, 0.2);
+    }
+    
+.skills-container {
     width: 100%;
-    height: 100vh;
-
-    .Skills_wrapper{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        .Skills_layout_container{
-            width: 70%;
-            height: 100%;
-
-            .Skills_layout_wrapper{
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-
-                .Skills_header{
-                    width: 100%;
-                    height: 15%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    gap: 1rem;
-
-                    .Skills_header_heading{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        font-size: 1.3rem;
-                        font-weight: 550;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    padding: 2rem 0;
+    
+    .skills-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        
+        .skills-layout {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+            
+            &.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .skills-header {
+                text-align: center;
+                margin-bottom: 2rem;
+                
+                .skills-title {
+                    font-size: 1.2rem;
+                    color: var(--text-secondary);
+                    font-weight: 400;
+                    margin-bottom: 2rem;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+                
+                .skills-intro {
+                    .skills-greeting {
+                        font-size: clamp(1.5rem, 4vw, 2rem);
                         color: var(--text-primary);
-                    }
-                    .Skills_header_content{
-                        width: 65%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        font-size: 1rem;
-                        color: var(--text-primary);
+                        margin-bottom: 0.5rem;
+                        font-weight: 300;
+                        line-height: 1.3;
                     }
                 }
-                .Skills_body{
-                    width: 100%;
-                    height: 85%;
-                    display: flex;
-                    flex-direction: row;
-                    gap: 2rem;
-
-                    .Skills_body_left{
-                        width: 30%;
-                        height: 100%;
+            }
+            
+            .skills-categories {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 2rem;
+                
+                .category-btn {
+                    background-color: var(--bg-secondary);
+                    color: var(--text-primary);
+                    border: none;
+                    padding: 0.8rem 1.5rem;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    white-space: nowrap;
+                    
+                    &:hover {
+                        background-color: var(--hover-bg);
+                        transform: translateY(-2px);
+                    }
+                    
+                    &.active {
+                        background-color: var(--active-bg);
+                        color: var(--accent-color);
+                    }
+                }
+            }
+            
+            .skills-body {
+                width: 100%;
+                
+                .skills-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                    gap: 1.5rem;
+                    
+                    @media (min-width: 768px) {
+                        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    }
+                    
+                    .skill-card {
+                        background-color: var(--bg-secondary);
+                        border-radius: 8px;
+                        padding: 1.5rem;
+                        transition: all 0.3s ease;
                         display: flex;
                         flex-direction: column;
-                        background-color: rgba(176, 224, 230, 0.082);
-                        opacity: 0;
-                        transform: translateX(-50px);
-                        transition: all 0.6s ease-out;
-
-                        &.visible {
-                            opacity: 1;
-                            transform: translateX(0);
-                            animation: slideInFromLeft 0.9s ease-out forwards;
+                        align-items: center;
+                        gap: 1rem;
+                        
+                        &:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
                         }
-
-                        .Skills_body_left_container{
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            position: relative;
-
-                            &.active {
-                                background-color: rgba(176, 224, 230, 0.6);
-                                
-                                .skill_body_nav_item {
-                                    color: var(--text-primary);
-                                    font-weight: 600;
-                                    transform: scale(1.1);
-                                }
-                                
-                                // Add selected indicator
-                                &::before {
-                                    content: '';
-                                    position: absolute;
-                                    left: 0;
-                                    top: 0;
-                                    bottom: 0;
-                                    width: 3px;
-                                    background-color: var(--text-primary);
-                                }
-                            }
-
-                            // Hover effect for non-selected items
-                            &:not(.active):hover {
-                                background-color: rgba(176, 224, 230, 0.4);
-                                
-                                .skill_body_nav_item {
-                                    transform: scale(1.05);
-                                }
-                            }
-
-                            .skill_body_nav_item{
-                                width: 30%;
-                                height: 100%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                text-align: center;
+                        
+                        .skill-icon-img {
+                            width: 50px;
+                            height: 50px;
+                            object-fit: contain;
+                        }
+                        
+                        .skill-info {
+                            text-align: center;
+                            
+                            .skill-name {
                                 font-size: 1rem;
                                 color: var(--text-primary);
-                            }
-                        }
-                    }
-
-                    .Skills_body_right{
-                        width: 80%;
-                        height: 100%;
-                        display: flex;
-                        opacity: 0;
-                        transform: translateX(50px);
-                        transition: all 0.6s ease-out;
-
-                        &.visible {
-                            opacity: 1;
-                            transform: translateX(0);
-                            animation: slideInFromRight 0.9s ease-out forwards;
-                        }
-
-                        .Skills_body_right_container{
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                            flex-direction: column;
-
-                            .Skills_body_right_wrapper{
-                                width: 100%;
-                                height: 10%;
-                                display: flex;
-                                flex-direction: row;
-                                align-items: center;
-                                justify-content: space-between;
-                                padding: 1rem;
-
-                                .Skills_body_right_heading{
-                                    width: 100%;
-                                    height: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    text-align: center;
-                                    font-size: 2rem;
-                                    color: var(--text-primary);
-                                }
-                            }
-
-                            .Skills_body_right_content{
-                                width: 100%;
-                                height: 90%;
-                                display: flex;
-                                flex-direction: column;
-                                padding: 10px 20px;
-
-                                .skill_detail{
-                                    width: 100%;
-                                    height: 100%;
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 1rem;
-
-                                    .skill_detail_info{
-                                        width: 100%;
-                                        height: 100%;
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 1rem;
-
-                                        .skill_detail_info_subheading{
-                                            width: 100%;
-                                            height: 15%;
-                                            display: flex;
-                                            font-size: 1.2rem;
-                                            color: var(--text-primary);
-                                        }
-
-                                        .skill_detail_info_description{
-                                            width: 100%;
-                                            height: 42.5%;
-                                            display: flex;
-                                            flex-direction: column;
-                                            gap: 0.1rem;
-
-                                            .skill_detail_info_description_heading{
-                                                width: 100%;
-                                                height: 15%;
-                                                display: flex;
-                                                font-size: 1.2rem;
-                                                color: var(--text-primary);
-                                            }
-                                            .skill_detail_info_description_para{
-                                                width: 100%;
-                                                height: 80%;
-                                                display: flex;
-                                                font-size: 1rem;
-                                                color: var(--text-primary);
-                                                padding: 0px 10px;
-                                            }
-                                        }
-
-                                        .skill_detail_info_keyDescription{
-                                            width: 100%;
-                                            height: 42.5%;
-                                            display: flex;
-                                            flex-direction: column;
-                                            gap: 0.1rem;
-
-                                            .skill_detail_info_keyDescription_heading{
-                                                width: 100%;
-                                                height: 20%;
-                                                display: flex;
-                                                font-size: 1.2rem;
-                                                color: var(--text-primary);
-                                            }
-                                            .skill_detail_info_keyDescription_para{
-                                                width: 100%;
-                                                height: 80%;
-                                                display: flex;
-                                                font-size: 1rem;
-                                                color: var(--text-primary);
-                                                padding: 0px 10px;
-                                            }
-                                        }
-                                    }
+                                font-weight: 500;
+                                
+                                @media (min-width: 768px) {
+                                    font-size: 1.1rem;
                                 }
                             }
                         }
@@ -251,8 +142,8 @@
         }
     }
 }
-
-@keyframes slideInFromLeft {
+    // Animation keyframes
+    @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100px);
         opacity: 0;
@@ -261,9 +152,9 @@
         transform: translateX(0);
         opacity: 1;
     }
-}
+    }
 
-@keyframes slideInFromRight {
+    @keyframes slideInFromRight {
     0% {
         transform: translateX(100px);
         opacity: 0;
@@ -272,4 +163,4 @@
         transform: translateX(0);
         opacity: 1;
     }
-}
+    }
