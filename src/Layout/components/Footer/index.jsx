@@ -56,18 +56,18 @@ return (
             variants={itemVariants}
             >
             <div className='contact_info'>
-                <Motion.h2 
+                <h2 
                 className='contact_title'
                 whileHover={{ scale: 1.05 }}
                 >
                 Contact
-                </Motion.h2>
-                <Motion.p 
+                </h2>
+                <p 
                 className='contact_text'
                 whileHover={{ scale: 1.02 }}
                 >
                 Talk about your journey into full-stack development what inspires you
-                </Motion.p>
+                </p>
                 <Motion.button 
                 className='contact_button'
                 whileHover={{ 
@@ -101,18 +101,18 @@ return (
                     className="profile-info"
                     variants={itemVariants}
                 >
-                    <Motion.p 
+                    <p 
                     className='Footer_text1'
                     whileHover={{ scale: 1.02 }}
                     >
                     I am a self-taught developer & designer from West Bengal,
-                    </Motion.p>
-                    <Motion.h2 
+                    </p>
+                    <h2 
                     className='Footer_h2_text'
                     whileHover={{ scale: 1.03 }}
                     >
                     Gokul Sureshkumar
-                    </Motion.h2>
+                    </h2>
                 </Motion.div>
                 <Motion.div 
                     className="profile-icons"

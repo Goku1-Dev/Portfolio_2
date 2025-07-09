@@ -14,7 +14,7 @@ export const Home = () => {
             <div className='Home_body_wrapper'>
                 <div className='Body_Home'>
                     <div className='HomeDetails'><HomeDetails /></div>
-                    <div className='MediaCnt'><MediaCnt /></div>
+                    {/* <div className='MediaCnt'><MediaCnt /></div> */}
                 </div>
                 <div className='Body_About'>
                     <div className='AboutCnt'><AboutCnt /></div>
