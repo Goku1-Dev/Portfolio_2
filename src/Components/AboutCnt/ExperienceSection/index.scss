@@ -44,7 +44,7 @@
                 }
                 .ExperienceCnt_content_container{
                     width: 100%;
-                    height: 130px;
+                    height: auto;
                     display: flex;
                     flex-direction: column;
                     gap: 5px;
@@ -61,7 +61,7 @@
                     }
                     .ExperienceCnt_content{
                         width: 100%;
-                        height: 50%;
+                        height: auto;
                         font-size: 14px;
                         color: var(--text-secondary);
                     }
