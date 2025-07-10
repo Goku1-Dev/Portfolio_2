@@ -18,7 +18,6 @@ export const Home = () => {
                 </div>
                 <div className='Body_About'>
                     <div className='AboutCnt'><AboutCnt /></div>
-                    <div className='CardCnt'><CardCnt /></div>
                 </div>
                 <div className='Body_Projects'>
                     <ProjectCnt />

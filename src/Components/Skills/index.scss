@@ -1,12 +1,12 @@
 .skills-container {
-    width: 100%;
-    min-height: 100vh;
+    width: auto;
+    min-height: auto;
     padding: 2rem 0;
     
     .skills-wrapper {
         max-width: 810px;
         width: 100%;
-        min-height: 960px;
+        min-height: 830px;
         margin: 0 auto;
         padding: 30px 50px;
         background-color: rgba(14, 3, 62, 0.223);
@@ -91,9 +91,9 @@
                     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                     gap: 1.5rem;
                     
-                    @media (min-width: 768px) {
-                        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                    }
+                    // @media (min-width: 768px) {
+                    //     grid-template-columns: repeat(auto-fill, minmax(200px));
+                    // }
                     
                     .skill-card {
                         background: rgba(255, 255, 255, 0.1);

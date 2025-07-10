@@ -19,11 +19,11 @@
         backdrop-filter: blur(10px);
         color: white;
         padding: 10px 0;
-        gap: 1rem;
+        gap: 3rem;
 
 
         .layout_header {
-            height: 10vh;
+            height: 100px;
             transition: var(--theme-transition);
             flex-shrink: 0;
             margin-left: 50px;
@@ -31,7 +31,7 @@
         }
         
         .layout_body {
-            height: 100%;
+            height: auto;
             flex: 1;
             min-height: 0;
             display: flex;
@@ -41,7 +41,7 @@
         }
         
         .layout_footer {
-            height: 75vh;
+            height: auto;
             transition: var(--theme-transition);
             flex-shrink: 0;
             margin-left: 50px;

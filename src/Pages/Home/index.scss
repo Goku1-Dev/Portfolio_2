@@ -1,70 +1,48 @@
 .Home_body_container {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
 
     .Home_body_wrapper {
-        width: 100%;
-        height: 100%;
+        width: auto;
+        height: auto;
         flex: 1; 
         display: flex;
         flex-direction: column;
         gap: 3rem;
         
         .Body_Home{
-            width: 100%;
-            height: 65vh;
+            width: auto;
+            height: auto;
             display: flex;
             flex-direction: row;
 
             .HomeDetails{
                 width: 100%;
             }
-            .MediaCnt{
-                width: 6%;
-                height: 260px;
-                z-index: 1;
-                top: 100px;
-                left: 16%;
-                position: relative;
-            }
         }
         .Body_About{
-            width: 100%;
-            height: 157vh;
+            width: auto;
+            height: auto;
 
 
             .AboutCnt{
-                width: 100%;
-                height: 150vh;
-            }
-            .CardCnt{
-                width: 100%;
-                height: 0;
-                z-index: 1;
-                top: -725px;
-                position: relative;
+                width: auto;
+            height: auto;
             }
         }
         .Body_Projects{
-            width: 100%;
+            width: auto;
+            height: auto;
         }
         .Body_Skills{
-            width: 100%;
+            width: auto;
+            height: auto;
         }
         .Body_SkillShowcase{
-            width: 100%;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .Home_body_container {
-        .Home_body_wrapper {
-            .Body_Home{
-                flex-direction: column;
-            }
+            width: auto;
+            height: auto;
         }
     }
 }
