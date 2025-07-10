@@ -27,7 +27,7 @@ export const Home = () => {
                     <SkillsCnt />
                 </div>
                 <div className='Body_SkillShowcase'>
-                    <SkillShowcase />
+                    {/* <SkillShowcase /> */}
                 </div>
             </div>
         </div>
