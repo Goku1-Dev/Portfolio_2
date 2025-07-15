@@ -1,14 +1,6 @@
 import { iconFile } from "../../../../utils";
 
-export const NavigationHeading = [
-    { id: 1, title: 'WEB DEVELOPMENT' },
-    { id: 2, title: 'PROGRAMMING LANGUAGES' },
-    { id: 3, title: 'DATABASE MANAGEMENT ' },
-    { id: 4, title: 'VERSION CONTROL ' },
-    { id: 5, title: 'DESIGNING TOOLS ' },
-];
-
-export const NavigationWebItems = [
+export const NavigationToolItems = [
     { id: 1, title: 'HTML', icons: iconFile.html },
     { id: 2, title: 'CSS', icons: iconFile.css },
     { id: 3, title: 'SCSS', icons: iconFile.scss },
@@ -19,28 +11,16 @@ export const NavigationWebItems = [
     { id: 8, title: 'Tanstack Router', icons: iconFile.html },
     { id: 9, title: 'Next.js', icons: iconFile.nextjs },
     { id: 10, title: 'Payload CMS', icons: iconFile.payloadCMS },
-];
-
-export const NavigationProgrammingItems = [
-    { id: 1, title: 'Node.js', icons: iconFile.nodejs },
-    { id: 2, title: 'Express.js', icons: iconFile.html },
-    { id: 3, title: 'Python', icons: iconFile.html },
-    { id: 4, title: 'FastAPI', icons: iconFile.FastAPI },
-];
-
-export const NavigationDatabaseItems = [
-    { id: 1, title: 'MySQL', icons: iconFile.sql },
-    { id: 2, title: 'PostgreSQL', icons: iconFile.html },
-];
-
-export const NavigationVersionItems = [
-    { id: 1, title: 'Git', icons:iconFile.git },
-    { id: 2, title: 'Github', icons: iconFile.github },
-];
-
-export const NavigationDesignItems = [
-    { id: 1, title: 'Figma', icons: iconFile.figma },
-    { id: 2, title: 'Framer', icons: iconFile.html },
-    { id: 3, title: 'CorelDRAW', icons: iconFile.corel_draw },
-    { id: 4, title: 'Canva', icons: iconFile.canva },
-];
+    { id: 11, title: 'Node.js', icons: iconFile.nodejs },
+    { id: 12, title: 'Express.js', icons: iconFile.html },
+    { id: 13, title: 'Python', icons: iconFile.html },
+    { id: 14, title: 'FastAPI', icons: iconFile.FastAPI },
+    { id: 15, title: 'MySQL', icons: iconFile.sql },
+    { id: 16, title: 'PostgreSQL', icons: iconFile.html },
+    { id: 17, title: 'Git', icons:iconFile.git },
+    { id: 18, title: 'Github', icons: iconFile.github },
+    { id: 19, title: 'Figma', icons: iconFile.figma },
+    { id: 20, title: 'Framer', icons: iconFile.html },
+    { id: 21, title: 'CorelDRAW', icons: iconFile.corel_draw },
+    { id: 22, title: 'Canva', icons: iconFile.canva },
+]
