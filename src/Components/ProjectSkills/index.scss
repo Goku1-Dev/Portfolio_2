@@ -1,0 +1,111 @@
+.ProjectSkills_body_container{
+    width: 100%;
+    height: auto;
+
+    .ProjectSkills_body_wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        .ProjectSkills_header{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: royalblue;
+        }
+
+        .ProjectSkills_container{
+            width: 100%;
+            height: 100%;
+
+            .ProjectSkills_wrapper{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+
+                .ProjectSkills_left{
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 10px;
+                    background-color: rgba(14, 3, 62, 0.223);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.218);
+                    padding: 20px 20px;
+                    gap: 1rem;
+
+                    .ProjectSkills_left_top{
+                        height: 100px;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 10px;
+                        gap: 10px;
+
+                        .ProjectSkills_left_top_heading{
+                            width: 100%;
+                            height: 40px;
+                            font-size: 2rem;
+                            color: var(--text-secondary);
+                        }
+                        .ProjectSkills_left_top_para{
+                            width: 100%;
+                            height: 40px;
+                            font-size: 1rem;
+                            color: var(--text-secondary);
+                        }
+                    }
+
+                    .ProjectSkills_left_bottom{
+                        height: 575px;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 10px;
+                        background-color: rgba(14, 3, 62, 0.223);
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.218);
+                    }
+                }
+
+                .ProjectSkills_right{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 10px;
+                    background-color: rgba(14, 3, 62, 0.223);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.218);
+                    padding: 20px 20px;
+
+                    .ProjectSkills_right_top{
+                        height: 130px;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 10px;
+
+                        .ProjectSkills_right_top_heading{
+                            width: 100%;
+                            height: 40px;
+                            font-size: 2rem;
+                            color: var(--text-secondary);
+                        }
+                        .ProjectSkills_right_top_para{
+                            width: 100%;
+                            height: 40px;
+                            font-size: 1rem;
+                            color: var(--text-secondary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

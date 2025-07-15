@@ -104,16 +104,16 @@
                                 justify-content: space-between;
 
                                 .profile-image {
-                                width: 150px;
-                                height: 150px;
-                                background-color: rgb(101, 100, 100);
-                                border-radius: 50%;
-                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+                                    width: 150px;
+                                    height: 150px;
+                                    background-color: rgb(101, 100, 100);
+                                    border-radius: 50%;
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
                                 }
 
                                 .profile-info {
-                                flex: 1;
-                                margin: 0 2rem;
+                                    flex: 1;
+                                    margin: 0 2rem;
 
                                 .Footer_text1{
                                     font-size: 1.25rem;
@@ -130,8 +130,8 @@
                                 }
 
                                 .profile-icons {
-                                display: flex;
-                                gap: 1rem;
+                                    display: flex;
+                                    gap: 1rem;
 
                                 .icon {
                                     width: 50px;
@@ -150,7 +150,7 @@
                                         }
                                     
                                         &:hover {
-                                        transform: scale(1.1);
+                                            transform: scale(1.1);
                                         .Footer_svg{
                                             color: var(--borderline-primary);
                                         }

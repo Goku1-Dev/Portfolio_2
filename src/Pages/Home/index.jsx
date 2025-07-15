@@ -7,6 +7,7 @@ import './index.scss'
 import SkillsCnt from '../../Components/Skills'
 import SkillShowcase from '../../Components/SkillShowcase'
 import ProjectCnt from '../../Components/projectCnt'
+import ProjectSkills from '../../Components/ProjectSkills'
 
 export const Home = () => {
     return (
@@ -20,14 +21,15 @@ export const Home = () => {
                     <div className='AboutCnt'><AboutCnt /></div>
                 </div>
                 <div className='Body_Projects'>
-                    <ProjectCnt />
+                    {/* <ProjectCnt /> */}
+                    <ProjectSkills />
                 </div>
                 <div className='Body_Skills'>
-                    <SkillsCnt />
+                    <ProjectCnt />
                 </div>
-                <div className='Body_SkillShowcase'>
-                    {/* <SkillShowcase /> */}
-                </div>
+                {/* <div className='Body_SkillShowcase'>
+                    <SkillShowcase />
+                </div> */}
             </div>
         </div>
     )
