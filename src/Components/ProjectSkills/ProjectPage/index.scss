@@ -6,66 +6,149 @@
         width: 100%;
         height: 100%;
         display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        padding: 1rem 1rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+        border-radius: 10px;
+        background-color: rgba(14, 3, 62, 0.223);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.218);
 
-        .ProjectPage_left{
-            width: 60%;
+        .ProjectPage_top{
+            width: 100%;
+            min-height: 50px;
             height: auto;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            .ProjectPage_topic1, .ProjectPage_topic2, .ProjectPage_topic3{
+        }
+        .ProjectPage_center{
+            width: 100%;
+            min-height: 500px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .ProjectPage_content{
                 width: 100%;
+                min-height: 150px;
                 height: auto;
                 display: flex;
                 flex-direction: column;
-                gap: 1rem;
+            }
+
+            .ProjectPage_card{
+                width: 90%;
+                height: 350px;
+                border-start-end-radius: 10px;
+                border-start-start-radius: 10px;
+                background-color: rgba(14, 3, 62, 0.223);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.218);
+            }
+
+            .ProjectPage_center_parent{
+                width: 90%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(9, 1fr);
+
+                .ProjectPage_card1 {
+                    grid-column: span 5 / span 5;
+                    grid-row: span 9 / span 9;
+                    border-start-start-radius: 10px;
+                    background-color: rgba(14, 3, 62, 0.223);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.218);
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px 20px;
+                    gap: 1rem;
+                }
+
+                .ProjectPage_card2 {
+                    grid-column: span 3 / span 3;
+                    grid-row: span 9 / span 9;
+                    grid-column-start: 6;
+                    border-start-end-radius: 10px;
+                    background-color: rgba(14, 3, 62, 0.223);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.218);
+
+                    .ProjectPage_card2_child{
+                        width: 100%;
+                        height: 167.2px;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 20px 20px;
+                        background-color: rgba(14, 3, 62, 0.223);
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.218);
+                    }
+                }
             }
         }
-        .ProjectPage_right{
-            width: 40%;
-            height: 100%;
+        .ProjectPage_bottom{
+            width: 90%;
+            min-height: 50px;
+            height: auto;
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgba(14, 3, 62, 0.223);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.218);
+            border-left: 1px solid rgba(255, 255, 255, 0.218);
+            border-right: 1px solid rgba(255, 255, 255, 0.218);
 
-            .ProjectPage_right_top{
-                width: 100%;
-                height: 450px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                border-radius: 10px;
-                background-color: rgba(14, 3, 62, 0.223);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.218);
-            }
-            .ProjectPage_right_bottom{
-                width: 100%;
-                height: 83px;
+            .ProjectPage_link_button{
+                width: 300px;
+                height: 100%;
                 display: flex;
                 flex-direction: row;
-                border-radius: 10px;
-                background-color: rgba(14, 3, 62, 0.223);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.218);
+                align-items: center;
+                justify-content: center;
 
-                .ProjectPage_right_bottom_left{
-                    width: 100%;
+                .ProjectPage_link1, .ProjectPage_link2{
+                    width: 150px;
                     height: 100%;
                     display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
                     align-items: center;
                     justify-content: center;
+                    border-left: 1px solid rgba(255, 255, 255, 0.218);
+                    border-right: 1px solid rgba(255, 255, 255, 0.218);
                 }
-                .ProjectPage_right_bottom_right{
-                    width: 100%;
+            }
+            .ProjectPage_button{
+                width: 100px;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                .ProjectPage_button_left{
+                    width: 50px;
                     height: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    border-left: 1px solid rgba(255, 255, 255, 0.218);
+                    border-right: 1px solid rgba(255, 255, 255, 0.218);
+                }
+                .ProjectPage_button_right{
+                    width: 50px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-left: 1px solid rgba(255, 255, 255, 0.218);
+                    border-right: 1px solid rgba(255, 255, 255, 0.218);
                 }
             }
         }

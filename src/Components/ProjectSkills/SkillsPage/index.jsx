@@ -7,6 +7,16 @@ const SkillsPage = () => {
     return (
         <div className="SkillsPage-container">
             <div className="SkillsPage-wrapper">
+                <div className="SkillsPage-header">
+                    <h2>Skills</h2>
+                    <p>Talk about your journey into full-stack development, what inspires you, 
+                        and what excites you about building things with code.
+                        Talk about your journey into full-stack development, what inspires you, 
+                        and what excites you about building things with code.
+                        Talk about your journey into full-stack development, what inspires you, 
+                        and what excites you about building things with code.
+                    </p>
+                </div>
                 <div className='SkillsPage-layout visible'>
                     <div className="SkillsPage-body">
                         <div className="SkillsPage-grid">

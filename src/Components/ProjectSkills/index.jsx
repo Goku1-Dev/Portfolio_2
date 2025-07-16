@@ -8,12 +8,11 @@ const ProjectSkills = () => {
         <div className='ProjectSkills_container'>
             <div className='ProjectSkills_wrapper'>
                 <div className='ProjectSkills_left'>
-                    <div className='ProjectSkills_top'>
-                        <ProjectPage />
-                    </div>
-                    <div className='ProjectSkills_bottom'>
-                        
-                    </div>
+                    {[1, 2, 3, 4, 5].map((item) => (
+                        <div key={item} className='ProjectSkills_layout'>
+                            <ProjectPage />
+                        </div>
+                    ))}
                 </div>
                 <div className='ProjectSkills_right'>
                     <SkillsPage />
