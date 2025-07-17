@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.scss'
-import ProjectPage from './Projectpage'
+import ProjectPage from './ProjectPage'
 import SkillsPage from './SkillsPage'
 
 const ProjectSkills = () => {
