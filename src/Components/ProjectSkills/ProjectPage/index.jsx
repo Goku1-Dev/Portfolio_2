@@ -33,6 +33,9 @@ const ProjectPage = () => {
                                 and what excites you about building things with code.Talk about your journey into full-stack development, what inspires you, 
                                 and what excites you about building things with code.
                             </p>
+                            <p>Talk about your journey into full-stack development, what inspires you, 
+                                and what excites you about building things with code.
+                            </p>
                         </div>
                         <div className='ProjectPage_card'></div>
                     </div>

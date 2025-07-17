@@ -10,7 +10,7 @@
         flex: 1; 
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
         
         .Body_Home{
             width: auto;
@@ -32,9 +32,24 @@
             height: auto;
             }
         }
+
+        
         .Body_Projects{
             width: auto;
             height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .Body_banner{
+                width: 100%;
+                height: 600px;
+                background-color: rgba(14, 3, 62, 0.223);
+            }
+            .Body_project_card{
+                width: auto;
+                height: auto;
+            }
         }
         .Body_Skills{
             width: auto;

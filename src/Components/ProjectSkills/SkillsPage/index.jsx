@@ -11,9 +11,9 @@ const SkillsPage = () => {
                     <h2>Skills</h2>
                     <p>Talk about your journey into full-stack development, what inspires you, 
                         and what excites you about building things with code.
-                        Talk about your journey into full-stack development, what inspires you, 
-                        and what excites you about building things with code.
-                        Talk about your journey into full-stack development, what inspires you, 
+                    </p>
+                    <p>Talk about your journey into full-stack development, what inspires you, 
+                        and what excites you about building things with code.Talk about your journey into full-stack development, what inspires you, 
                         and what excites you about building things with code.
                     </p>
                 </div>

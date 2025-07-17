@@ -1,10 +1,10 @@
 import React from 'react'
 import HomeDetails from './components/HomeDetails'
 import AboutCnt from '../../Components/AboutCnt'
-import CardCnt from '../../Components/AboutCnt/CardCnt'
-import MediaCnt from '../../Components/MediaCnt'
+// import CardCnt from '../../Components/AboutCnt/CardCnt'
+// import MediaCnt from '../../Components/MediaCnt'
 import './index.scss'
-import SkillsCnt from '../../Components/Skills'
+// import SkillsCnt from '../../Components/Skills'
 import SkillShowcase from '../../Components/SkillShowcase'
 import ProjectCnt from '../../Components/projectCnt'
 import ProjectSkills from '../../Components/ProjectSkills'
@@ -21,15 +21,19 @@ export const Home = () => {
                     <div className='AboutCnt'><AboutCnt /></div>
                 </div>
                 <div className='Body_Projects'>
-                    {/* <ProjectCnt /> */}
-                    <ProjectSkills />
+                    <div className='Body_banner'></div>
+                    <div className='Body_project_card'>
+                        <ProjectSkills />
+                    </div>
+                    <div className='Body_banner'></div>
+                    <div className='Body_project_card'>
+                        <ProjectCnt />
+                    </div>
                 </div>
-                <div className='Body_Skills'>
-                    <ProjectCnt />
-                </div>
-                {/* <div className='Body_SkillShowcase'>
+                {/* <div className='Body_Skills'></div> */}
+                <div className='Body_SkillShowcase'>
                     <SkillShowcase />
-                </div> */}
+                </div>
             </div>
         </div>
     )
