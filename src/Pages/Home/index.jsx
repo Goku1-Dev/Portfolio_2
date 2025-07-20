@@ -21,11 +21,11 @@ export const Home = () => {
                     <div className='AboutCnt'><AboutCnt /></div>
                 </div>
                 <div className='Body_Projects'>
-                    <div className='Body_banner'></div>
+                    <div className='Body_banner'>Projects</div>
                     <div className='Body_project_card'>
                         <ProjectSkills />
                     </div>
-                    <div className='Body_banner'></div>
+                    <div className='Body_banner'>Websites</div>
                     <div className='Body_project_card'>
                         <ProjectCnt />
                     </div>
